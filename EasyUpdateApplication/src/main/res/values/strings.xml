@@ -4,19 +4,19 @@
     <string name="lib_name">EasyUpdateApplication</string>
     <string name="hello_world">Hello world!</string>
 	
-	<string name="updater_available_title">"Nouvelle mise à jour disponible !"</string>
-	<string name="updater_available_description">"La mise à jour %1$s est disponible. \n\nVous pourrez bénéficier des fonctionnalités suivantes: "</string>
-	<string name="updater_not_available_title">"Aucune mise à jour disponible"</string>
-	<string name="updater_not_available_description">"Vous possédez la dernière version disponible de %1$s !"</string>
-	<string name="updater_btn_download">Télécharger</string>
-	<string name="updater_btn_back">Retour</string>
-	<string name="updater_btn_ok">Ok</string>
-	<string name="updater_downloading">Téléchargement en cours…</string>
-
-	<string name="updater_tested_title">"Période de test"</string>
-	<string name="updater_tested_prompt">"IlIon est en période de test, il ce pourrait qu'une mise à jour soient disponible dans un court délai.\n\nVeuillez revenir plus tard !"</string>
+	<string name="updater_available_title">"New update available"</string>
+    <string name="updater_available_description">"The update %1$s is available.\n\nYou can benefit from the following features: "</string>
+    <string name="updater_not_available_title">"No updates available !"</string>
+    <string name="updater_not_available_description">"You have the latest available version of %1$s"</string>
+    <string name="updater_btn_download">Download</string>
+    <string name="updater_btn_back">Back</string>
+    <string name="updater_btn_ok">Ok</string>
+    <string name="updater_downloading">Download in progress…</string>
+    
+	<string name="updater_tested_title">"Test period"</string>
+    <string name="updater_tested_prompt">"%1$s is in test period, so an update might be available in a short time.\n\nPlease come back later !"</string>
 	
-	<string name="updater_donwload_json_failed">"Érreur, un problème est survenu"</string>
-	<string name="updater_directory">"Mise à Jour"</string>
-
+	<string name="updater_donwload_json_failed">"Error, a problem occurred"</string>
+	<string name="updater_directory">"Update"</string>
+	
 </resources>

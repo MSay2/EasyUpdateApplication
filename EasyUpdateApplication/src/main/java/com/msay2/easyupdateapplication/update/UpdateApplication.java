@@ -186,7 +186,7 @@ public class UpdateApplication
 					}
 					else if (app_tested.equals("no"))
 					{
-						dialogNoTested(context);
+						dialogNoTested(context, name_of_your_application);
 					}
 				} 
 				else 
@@ -394,7 +394,7 @@ public class UpdateApplication
 		dialog.show();
 	}
 	
-	private static void dialogNoTested(@NonNull Activity activity)
+	private static void dialogNoTested(@NonNull Activity activity, @NonNull String name_app)
 	{
 		View view = activity.getLayoutInflater().inflate(R.layout.dialog_update, null);
 
@@ -404,7 +404,7 @@ public class UpdateApplication
 
 		rv.setVisibility(View.GONE);
 		title.setText(activity.getResources().getString(R.string.updater_tested_title));
-		content.setText(activity.getResources().getString(R.string.updater_tested_prompt));
+		content.setText(String.format(activity.getResources().getString(R.string.updater_tested_prompt), name_app));
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity)
 		    .setView(view)
