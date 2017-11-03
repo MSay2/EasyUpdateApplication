@@ -49,10 +49,15 @@ UpdateApplication.checkUpdateApplication(this, URL_JSON, "Care");
  "url": "paste_your_URL_apk",
 ```
 
+* Look at an example of use [MainActivity.java](https://github.com/MSay2/EasyUpdateApplication/blob/master/app/src/main/java/com/msay2/easy_update_application/MainActivity.java)
+
 # More informations
 * The method ```checkUpdateApplication()``` contains several functions set out above
 * The method ```checkUpdateApplication2()``` contains only the update functionality available, if no update is available no dialog box will appear
 * In your file ```.json``` is the section ```tested``` this feature allows you to display a special dialog box informing the user that the future application update is in test period, this is extremely useful if you want users to no longer update your application, this function includes only two texts ```" yes"``` or ```"no"```
+
+# Clone Git Repository
+Please refresh the project so that it can work !
 
  # License
 

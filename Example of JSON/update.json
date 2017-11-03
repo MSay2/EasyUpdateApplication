@@ -1,8 +1,8 @@
 {
-    "versionName": "1.0",
-    "versionCode": "1",
+    "versionName": "2.0",
+    "versionCode": "2",
     "tested": "yes",
-    "url": "https://raw.githubusercontent.com/Name_Dev/Name_Repository/master/update/application/app.apk",
+    "url": "https://raw.githubusercontent.com/MSay2/EasyUpdateApplication/master/Example%20of%20JSON/app.apk",
     "release": 
     [
         "- Add support",
