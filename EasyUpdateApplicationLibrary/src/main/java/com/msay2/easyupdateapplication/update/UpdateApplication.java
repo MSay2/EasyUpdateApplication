@@ -1,7 +1,7 @@
 package com.msay2.easyupdateapplication.update;
 
 import com.msay2.easyupdateapplication.R;
-import com.msay2.easyupdateapplication.item_data.ItemDataUpdate;
+import com.msay2.easyupdateapplication.item_data.ItemData;
 import com.msay2.easyupdateapplication.preferences.Preferences;
 
 import android.support.annotation.NonNull;
@@ -62,8 +62,8 @@ public class UpdateApplication
 {
 	private static AsyncTask<String, Void, Integer> checkUpdate;
 	private static AsyncTask<String, String, String> downloadApplication;
-	private static List<ItemDataUpdate> itemsData;
-	private static ItemDataUpdate item;
+	private static List<ItemData> itemsData;
+	private static ItemData item;
 	private static AlertDialog dialog;
 	private static ProgressDialog progressDialog;
 	
@@ -118,7 +118,7 @@ public class UpdateApplication
 						{
 							JSONObject obj = new JSONObject(response.toString());
 							
-							item = new ItemDataUpdate();
+							item = new ItemData();
 							item.setVersionName(obj.optString("versionName"));
 							item.setVersionCode(obj.optString("versionCode"));
 							item.setTested(obj.optString("tested"));
@@ -247,7 +247,7 @@ public class UpdateApplication
 						{
 							JSONObject obj = new JSONObject(response.toString());
 
-							item = new ItemDataUpdate();
+							item = new ItemData();
 							item.setVersionName(obj.optString("versionName"));
 							item.setVersionCode(obj.optString("versionCode"));
 							item.setTested(obj.optString("tested"));
@@ -333,7 +333,7 @@ public class UpdateApplication
 	
 	private static void dialogYesUpdate(@NonNull Activity activity, @NonNull String url, @NonNull String content_release, @NonNull String folder_update)
 	{
-		View view = activity.getLayoutInflater().inflate(R.layout.dialog_update, null);
+		View view = activity.getLayoutInflater().inflate(R.layout.ms_dialog_update, null);
 
 		TextView title = (TextView)view.findViewById(R.id.id_title);
 		TextView content = (TextView)view.findViewById(R.id.id_content_text);
@@ -370,7 +370,7 @@ public class UpdateApplication
 	
 	private static void dialogNoUpdate(@NonNull Activity activity, @NonNull String name_app)
 	{
-		View view = activity.getLayoutInflater().inflate(R.layout.dialog_update, null);
+		View view = activity.getLayoutInflater().inflate(R.layout.ms_dialog_update, null);
 
 		TextView title = (TextView)view.findViewById(R.id.id_title);
 		TextView content = (TextView)view.findViewById(R.id.id_content_text);
@@ -396,7 +396,7 @@ public class UpdateApplication
 	
 	private static void dialogNoTested(@NonNull Activity activity, @NonNull String name_app)
 	{
-		View view = activity.getLayoutInflater().inflate(R.layout.dialog_update, null);
+		View view = activity.getLayoutInflater().inflate(R.layout.ms_dialog_update, null);
 
 		TextView title = (TextView)view.findViewById(R.id.id_title);
 		TextView content = (TextView)view.findViewById(R.id.id_content_text);

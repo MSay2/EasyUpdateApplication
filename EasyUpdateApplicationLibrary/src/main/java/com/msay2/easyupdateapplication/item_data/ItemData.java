@@ -18,11 +18,11 @@ package com.msay2.easyupdateapplication.item_data;
  * limitations under the License.
  */
 
-public class ItemDataUpdate
+public class ItemData
 {
 	private String versionName, versionCode, tested, url, release;
 
-	public ItemDataUpdate()
+	public ItemData()
 	{ }
 
 	public String getVersionName()
