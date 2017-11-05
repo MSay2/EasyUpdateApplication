@@ -683,6 +683,8 @@ public class UpdateApplication
 					
 					if (statusCode == 200)
 					{
+						conexion.connect();
+						
 						int lenghtOfFile = conexion.getContentLength();
 						Log.d("ANDRO_ASYNC", "Lenght of file: " + lenghtOfFile);
 
@@ -774,6 +776,8 @@ public class UpdateApplication
 
 					if (statusCode == 200)
 					{
+						conexion.connect();
+						
 						int lenghtOfFile = conexion.getContentLength();
 						Log.d("ANDRO_ASYNC", "Lenght of file: " + lenghtOfFile);
 
