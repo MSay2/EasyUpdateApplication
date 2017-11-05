@@ -583,9 +583,9 @@ public class UpdateApplication
 		String btn_back = activity.getResources().getString(R.string.updater_btn_back);
 
 		new ms_AlertDialog(activity)
-		    .setContentTitle(title)
-		    .setContentMessage(content_release)
-		    .setPositiveButton(btn_updater, new ms_AlertDialog.OnClickListener()
+		    .setAContentTitle(title)
+		    .setAContentMessage(content_release)
+		    .setAPositiveButton(btn_updater, new ms_AlertDialog.OnClickListener()
 			{
 				@Override
 				public void onClick(View view)
@@ -594,7 +594,7 @@ public class UpdateApplication
 					ms_AlertDialog.OnClickListener.dismissDialog();
 				}
 			})
-		    .setNegativeButton(btn_back, new ms_AlertDialog.OnClickListener());
+		    .setANegativeButton(btn_back, new ms_AlertDialog.OnClickListener());
 	}
 	
 	private static void dialogYesUpdate(@NonNull Activity activity, @NonNull String url, @NonNull String content_release, @NonNull String folder_update, @NonNull int buffer_size)
@@ -604,9 +604,9 @@ public class UpdateApplication
 		String btn_back = activity.getResources().getString(R.string.updater_btn_back);
 
 		new ms_AlertDialog(activity)
-		    .setContentTitle(title)
-		    .setContentMessage(content_release)
-		    .setPositiveButton(btn_updater, new ms_AlertDialog.OnClickListener()
+		    .setAContentTitle(title)
+		    .setAContentMessage(content_release)
+		    .setAPositiveButton(btn_updater, new ms_AlertDialog.OnClickListener()
 			{
 				@Override
 				public void onClick(View view)
@@ -615,7 +615,7 @@ public class UpdateApplication
 					ms_AlertDialog.OnClickListener.dismissDialog();
 				}
 			})
-		    .setNegativeButton(btn_back, new ms_AlertDialog.OnClickListener());
+		    .setANegativeButton(btn_back, new ms_AlertDialog.OnClickListener());
 	}
 
 	private static void dialogNoUpdate(@NonNull Activity activity, @NonNull String name_app)
@@ -625,9 +625,9 @@ public class UpdateApplication
 		String btn_ok = activity.getResources().getString(R.string.updater_btn_ok);
 
 		new ms_AlertDialog(activity)
-		    .setContentTitle(title)
-		    .setContentMessage(content)
-		    .setPositiveButton(btn_ok, new ms_AlertDialog.OnClickListener());
+		    .setAContentTitle(title)
+		    .setAContentMessage(content)
+		    .setAPositiveButton(btn_ok, new ms_AlertDialog.OnClickListener());
 	}
 
 	private static void dialogNoTested(@NonNull Activity activity, @NonNull String name_app)
@@ -637,9 +637,9 @@ public class UpdateApplication
 		String btn_ok = activity.getResources().getString(R.string.updater_btn_ok);
 
 		new ms_AlertDialog(activity)
-		    .setContentTitle(title)
-		    .setContentMessage(content)
-		    .setPositiveButton(btn_ok, new ms_AlertDialog.OnClickListener());
+		    .setAContentTitle(title)
+		    .setAContentMessage(content)
+		    .setAPositiveButton(btn_ok, new ms_AlertDialog.OnClickListener());
 	}
 	
 	private static ProgressDialog showDialog(@NonNull Activity activity)

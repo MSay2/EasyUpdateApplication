@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
@@ -8,11 +9,20 @@
 		android:id="@+id/id_title"
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
-		style="@style/ms_AlertDialog.Title"/>
+		style="@style/ms_AlertDialog.Title"
+		android:visibility="gone"/>
+	
+	<FrameLayout
+		android:id="@+id/id_custom_view"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:visibility="gone"/>
 
 	<ScrollView
+		android:id="@+id/id_scroll"
 		android:layout_height="wrap_content"
-		android:layout_width="match_parent">
+		android:layout_width="match_parent"
+		android:visibility="gone">
 
 		<LinearLayout
 			android:layout_height="wrap_content"
@@ -31,21 +41,15 @@
 
 	</ScrollView>
 
-	<RelativeLayout
+	<LinearLayout
 		android:id="@+id/bar_button"
 		android:layout_height="56dp"
-		android:layout_width="match_parent">
-
-		<Button
-			android:id="@+id/button_positive"
-			style="?android:attr/buttonBarButtonStyle"
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:text="Télécharger"
-			android:layout_centerVertical="true"
-			android:layout_alignParentRight="true"
-			android:layout_marginRight="10dp"
-			android:textColor="?attr/colorAccent"/>
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="right"
+		android:paddingRight="10dp"
+		android:paddingLeft="10dp"
+		android:visibility="gone">
 
 		<Button
 			android:id="@+id/button_negative"
@@ -53,11 +57,21 @@
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:text="Annuler"
-			android:layout_toLeftOf="@+id/button_positive"
-			android:layout_centerVertical="true"
 			android:textColor="?android:attr/textColorPrimary"
-			android:visibility="invisible"/>
+			android:layout_gravity="center_vertical"
+			android:visibility="gone"/>
 
-	</RelativeLayout>
+		<Button
+			android:id="@+id/button_positive"
+			style="?android:attr/buttonBarButtonStyle"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="Télécharger"
+			android:textColor="?attr/colorAccent"
+			android:layout_gravity="center_vertical"
+			android:visibility="gone"/>
+
+	</LinearLayout>
 
 </LinearLayout>
+
