@@ -24,9 +24,20 @@ public class MainActivity extends AppCompatActivity
 		if (isConnected())
 		{
 			// Wi-Fi is available
+			// default buffer_size is 1024
 			UpdateApplication.checkUpdateApplication(this, URL_JSON, "MyApp");
-
 			//UpdateApplication.checkUpdateApplication2(this, URL_JSON, "MyApp");
+			
+			// this for the custom buffer_size, this is for the downloading of the application
+			// UpdateApplication.checkUpdateApplication(this, URL_JSON, "MyApp", 4096);
+			// UpdateApplication.checkUpdateApplication2(this, URL_JSON, "MyApp", 4096);
+			// UpdateApplication.checkUpdateApplication(this, URL_JSON, "MyApp", UpdateApplication.BUFFER_SIZE_MID);
+			// UpdateApplication.checkUpdateApplication2(this, URL_JSON, "MyApp", UpdateApplication.BUFFER_SIZE_MID);
+			
+			// UpdateApplication.BUFFER_SIZE_FAST is 8192
+			// UpdateApplication.BUFFER_SIZE_MID is 4086
+			// UpdateApplication.BUFFER_SIZE_DEFAULT is 1024
+			// UpdateApplication.BUFFER_SIZE_SLOW is 512
 		}
 		else
 		{
