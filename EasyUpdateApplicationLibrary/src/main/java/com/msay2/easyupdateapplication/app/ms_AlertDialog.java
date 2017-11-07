@@ -311,13 +311,13 @@ public class ms_AlertDialog extends AlertDialog
 		return this;
 	}
 	
-	public ms_AlertDialog setAOnItemClickListener(AdapterView.OnItemClickListener listener)
+	public ms_AlertDialog setAListViewOnItemClickListener(AdapterView.OnItemClickListener listener)
 	{
 		obtainAListView().setOnItemClickListener(listener);
 		return this;
 	}
 	
-	public ms_AlertDialog setAOnItemLongClickListener(AdapterView.OnItemLongClickListener listener)
+	public ms_AlertDialog setAListViewOnItemLongClickListener(AdapterView.OnItemLongClickListener listener)
 	{
 		obtainAListView().setOnItemLongClickListener(listener);
 		return this;
