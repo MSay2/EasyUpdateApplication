@@ -17,7 +17,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.view.LayoutInflater;
+import android.view.GestureDetector;
+import android.view.LayoutInflater;  
+import android.view.MotionEvent; 
 import android.view.View;
 import android.view.ViewGroup;
 import android.util.Log;
@@ -311,6 +313,12 @@ public class ms_AlertDialog extends AlertDialog
 		return this;
 	}
 	
+	public ms_AlertDialog setARecyclerViewOnItemClickListener(DialogInterface.RecyclerViewOnItemClickListener listener)
+	{
+		obtainARecyclerView().addOnItemTouchListener(listener);
+		return this;
+	}
+	
 	public ms_AlertDialog setAListViewOnItemClickListener(AdapterView.OnItemClickListener listener)
 	{
 		obtainAListView().setOnItemClickListener(listener);
@@ -523,17 +531,63 @@ public class ms_AlertDialog extends AlertDialog
 		return Preferences.setDimensionPixels(dp, getContext());
 	}
 
-	public static class OnClickListener implements View.OnClickListener
+	public static class DialogInterface
 	{
-		@Override
-		public void onClick(View view)
+		public static class ButtonOnClickListener implements View.OnClickListener
 		{
-			dismissDialog();
+			@Override
+			public void onClick(View p1)
+			{
+				dismiss();
+			}
+			
+			public static void dismiss()
+			{
+				dialog.dismiss();
+			}
 		}
-
-		public static void dismissDialog()
+		
+		public static class RecyclerViewOnItemClickListener implements RecyclerView.OnItemTouchListener
 		{
-			dialog.dismiss();
+			private OnItemClickListener listener;
+			private GestureDetector gestureDetector;
+			
+			public interface OnItemClickListener
+			{
+				public void onItemClick(View view, int position);
+			}
+			
+			public RecyclerViewOnItemClickListener(Context context, OnItemClickListener listener)
+			{
+				this.listener = listener;
+				gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener()
+				{
+					@Override
+					public Boolean onSingleTapUp(MotionEvent e)
+					{
+						return true;
+					}
+				});
+			}
+
+			@Override
+			public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent)
+			{
+				View childView = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+				if (childView != null && listener != null && gestureDetector.onTouchEvent(motionEvent))
+				{
+					listener.onItemClick(childView, recyclerView.getChildAdapterPosition(childView));
+				}
+				return false;
+			}
+			
+			@Override
+			public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent)
+			{ }
+
+			@Override
+			public void onRequestDisallowInterceptTouchEvent(boolean aBoolean)
+			{ }
 		}
 	}
 }

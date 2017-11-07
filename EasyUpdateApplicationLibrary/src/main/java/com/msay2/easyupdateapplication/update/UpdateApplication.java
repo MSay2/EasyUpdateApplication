@@ -585,16 +585,16 @@ public class UpdateApplication
 		new ms_AlertDialog(activity)
 		    .setAContentTitle(title)
 		    .setAContentMessage(content_release)
-		    .setAPositiveButton(btn_updater, new ms_AlertDialog.OnClickListener()
+		    .setAPositiveButton(btn_updater, new ms_AlertDialog.DialogInterface.ButtonOnClickListener()
 			{
 				@Override
 				public void onClick(View view)
 				{
 					downloadApplication(activity, url, folder_update).execute();
-					ms_AlertDialog.OnClickListener.dismissDialog();
+					ms_AlertDialog.DialogInterface.ButtonOnClickListener.dismiss();
 				}
 			})
-		    .setANegativeButton(btn_back, new ms_AlertDialog.OnClickListener());
+		    .setANegativeButton(btn_back, new ms_AlertDialog.DialogInterface.ButtonOnClickListener());
 	}
 	
 	private static void dialogYesUpdate(@NonNull Activity activity, @NonNull String url, @NonNull String content_release, @NonNull String folder_update, @NonNull int buffer_size)
@@ -606,16 +606,16 @@ public class UpdateApplication
 		new ms_AlertDialog(activity)
 		    .setAContentTitle(title)
 		    .setAContentMessage(content_release)
-		    .setAPositiveButton(btn_updater, new ms_AlertDialog.OnClickListener()
+		    .setAPositiveButton(btn_updater, new ms_AlertDialog.DialogInterface.ButtonOnClickListener()
 			{
 				@Override
 				public void onClick(View view)
 				{
 					downloadApplication(activity, url, folder_update, buffer_size).execute();
-					ms_AlertDialog.OnClickListener.dismissDialog();
+					ms_AlertDialog.DialogInterface.ButtonOnClickListener.dismiss();
 				}
 			})
-		    .setANegativeButton(btn_back, new ms_AlertDialog.OnClickListener());
+		    .setANegativeButton(btn_back, new ms_AlertDialog.DialogInterface.ButtonOnClickListener());
 	}
 
 	private static void dialogNoUpdate(@NonNull Activity activity, @NonNull String name_app)
@@ -627,7 +627,7 @@ public class UpdateApplication
 		new ms_AlertDialog(activity)
 		    .setAContentTitle(title)
 		    .setAContentMessage(content)
-		    .setAPositiveButton(btn_ok, new ms_AlertDialog.OnClickListener());
+		    .setAPositiveButton(btn_ok, new ms_AlertDialog.DialogInterface.ButtonOnClickListener());
 	}
 
 	private static void dialogNoTested(@NonNull Activity activity, @NonNull String name_app)
@@ -639,7 +639,7 @@ public class UpdateApplication
 		new ms_AlertDialog(activity)
 		    .setAContentTitle(title)
 		    .setAContentMessage(content)
-		    .setAPositiveButton(btn_ok, new ms_AlertDialog.OnClickListener());
+		    .setAPositiveButton(btn_ok, new ms_AlertDialog.DialogInterface.ButtonOnClickListener());
 	}
 	
 	private static ProgressDialog showDialog(@NonNull Activity activity)
