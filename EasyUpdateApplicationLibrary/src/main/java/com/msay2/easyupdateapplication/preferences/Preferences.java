@@ -30,4 +30,11 @@ public class Preferences
 	{
 		return new BuildConfigHelper(context);
 	}
+	
+	public static int setDimensionPixels(int dp, @NonNull Context context)
+	{
+		float densityMectrics = context.getResources().getDisplayMetrics().density;
+		
+		return (int)(dp * densityMectrics + 0.5f);
+	}
 }

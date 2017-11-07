@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
@@ -16,12 +16,30 @@
 		android:id="@+id/id_custom_view"
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
+		android:visibility="gone"
+		android:layout_below="@+id/id_title"/>
+	
+	<ListView
+		android:id="@+id/id_list"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:listSelector="?android:attr/selectableItemBackground"
+		android:visibility="gone"
+		android:layout_below="@+id/id_title"/>
+	
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/id_recycler"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_below="@+id/id_title"
 		android:visibility="gone"/>
 
 	<ScrollView
 		android:id="@+id/id_scroll"
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
+		android:fillViewport="true"
+		android:layout_below="@+id/id_title"
 		android:visibility="gone">
 
 		<LinearLayout
@@ -73,5 +91,4 @@
 
 	</LinearLayout>
 
-</LinearLayout>
-
+</RelativeLayout>
