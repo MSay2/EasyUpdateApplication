@@ -563,7 +563,7 @@ public class ms_AlertDialog extends AlertDialog
 				gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener()
 				{
 					@Override
-					public Boolean onSingleTapUp(MotionEvent e)
+					public boolean onSingleTapUp(MotionEvent e)
 					{
 						return true;
 					}
